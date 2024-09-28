@@ -4,6 +4,7 @@
  */
 package fachada;
 
+import dtos.Correo;
 import configuracion.MailConfiguracion;
 import configuracion.MailConfiguracionManager;
 import factory.FactoryServicioCorreo;
@@ -22,7 +23,7 @@ public class MailFachada {
         this.servicioCorreo = FactoryServicioCorreo.getServicioCorreo(config.getProtocolo());
     }
 
-    public void enviarCorreo(String destinatario, String asunto, String cuerpo) {
-        servicioCorreo.enviarCorreo(destinatario, asunto, cuerpo);
+    public void enviarCorreo(Correo correo) {
+        servicioCorreo.enviarCorreo(correo, MailConfiguracionManager.getConfiguracion());
     }
 }

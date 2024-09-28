@@ -4,11 +4,14 @@
  */
 package servicio;
 
+import dtos.Correo;
+import configuracion.MailConfiguracion;
+
 /**
  *
  * @author carli
  */
 public interface IServicioCorreo {
-   public void enviarCorreo(String destinatario, String asunto, String cuerpo);
+   public void enviarCorreo(Correo correo, MailConfiguracion configuracion);
  
 }

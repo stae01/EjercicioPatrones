@@ -4,6 +4,9 @@
  */
 package configuracion;
 
+import dtos.Cuenta;
+import dtos.Servidor;
+
 /**
  *
  * @author carli
@@ -16,7 +19,7 @@ public class MailConfiguracionManager {
     public static MailConfiguracion getConfiguracion() {
         if (configuracionActual == null) {
             // Valores por defecto o cargar de un archivo de configuración
-            configuracionActual = new MailConfiguracion("smtp.example.com", 587, "user@example.com", "password", "JavaMail");
+            configuracionActual = new MailConfiguracion(new Servidor("smtp.example.com", "587"), new Cuenta("user@example.com", "password"), "JavaMail");
         }
         return configuracionActual;
     }
@@ -24,6 +27,6 @@ public class MailConfiguracionManager {
     // Método para actualizar la configuración
     public static void setConfiguracion(MailConfiguracion nuevaConfiguracion) {
         configuracionActual = nuevaConfiguracion;
-        System.out.println("Configuración actualizada: " + nuevaConfiguracion.getServidorSmtp());
+        System.out.println("Configuración actualizada: " + nuevaConfiguracion.getServidor().getTipo());
     }
 }

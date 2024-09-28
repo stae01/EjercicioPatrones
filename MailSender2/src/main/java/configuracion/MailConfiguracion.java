@@ -4,57 +4,40 @@
  */
 package configuracion;
 
+import dtos.Cuenta;
+import dtos.Servidor;
+
 /**
  *
  * @author carli
  */
 public class MailConfiguracion {
- private String servidorSmtp;
-    private int puerto;
-    private String usuario;
-    private String contrasena;
+
+    private Servidor servidor;
+    private Cuenta cuenta;
     private String protocolo;
 
     // Constructor
-    public MailConfiguracion(String servidorSmtp, int puerto, String usuario, String contrasena, String protocolo) {
-        this.servidorSmtp = servidorSmtp;
-        this.puerto = puerto;
-        this.usuario = usuario;
-        this.contrasena = contrasena;
+    public MailConfiguracion(Servidor servidor, Cuenta cuenta, String protocolo) {
+        this.servidor = servidor;
+        this.cuenta = cuenta;
         this.protocolo = protocolo;
     }
 
-    // Getters y Setters
-    public String getServidorSmtp() {
-        return servidorSmtp;
+    public Cuenta getCuenta() {
+        return cuenta;
     }
 
-    public void setServidorSmtp(String servidorSmtp) {
-        this.servidorSmtp = servidorSmtp;
+    public void setCuenta(Cuenta cuenta) {
+        this.cuenta = cuenta;
     }
 
-    public int getPuerto() {
-        return puerto;
+    public Servidor getServidor() {
+        return servidor;
     }
 
-    public void setPuerto(int puerto) {
-        this.puerto = puerto;
-    }
-
-    public String getUsuario() {
-        return usuario;
-    }
-
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
-    }
-
-    public String getContrasena() {
-        return contrasena;
-    }
-
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
+    public void setServidor(Servidor servidor) {
+        this.servidor = servidor;
     }
 
     public String getProtocolo() {
@@ -64,4 +47,5 @@ public class MailConfiguracion {
     public void setProtocolo(String protocolo) {
         this.protocolo = protocolo;
     }
+
 }

@@ -4,6 +4,9 @@
  */
 package servicio;
 
+import configuracion.MailConfiguracion;
+import dtos.Correo;
+
 /**
  *
  * @author carli
@@ -11,8 +14,8 @@ package servicio;
 public class OtroServicioCorreo implements IServicioCorreo {
 
     @Override
-    public void enviarCorreo(String destinatario, String asunto, String cuerpo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void enviarCorreo(Correo correo, MailConfiguracion configuracion) {
+        System.out.println("\nOtros Servicio");
     }
     
 }

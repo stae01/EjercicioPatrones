@@ -4,6 +4,9 @@
  */
 package servicio;
 
+import dtos.Correo;
+import configuracion.MailConfiguracion;
+
 /**
  *
  * @author carli
@@ -11,8 +14,17 @@ package servicio;
 public class JavaMailServicio implements IServicioCorreo{
 
     @Override
-    public void enviarCorreo(String destinatario, String asunto, String cuerpo) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    public void enviarCorreo(Correo correo, MailConfiguracion configuracion) {
+        System.out.println("Java Mail API");
+        
+        System.out.println("\nDestinatario: " + correo.getDestinatario());
+        System.out.println("Asunto: " + correo.getAsunto());
+        System.out.println("Cuerpo: " + correo.getCuerpo());
+        
+        System.out.println("\nServidor: " + configuracion.getServidor().getTipo());
+        System.out.println("Puerto: " + configuracion.getServidor().getPuerto());
+        System.out.println("Dirección: " + configuracion.getCuenta().getDireccion());
+        System.out.println("Contraseña: " + configuracion.getCuenta().getContrasena());
     }
     
 }
