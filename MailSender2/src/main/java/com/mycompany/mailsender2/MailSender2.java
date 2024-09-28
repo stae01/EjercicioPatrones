@@ -4,12 +4,12 @@
 
 package com.mycompany.mailsender2;
 
-import configuracion.LectorArchivoConfiguracion;
 import dtos.Correo;
 import configuracion.MailConfiguracion;
 import configuracion.MailConfiguracionManager;
 import dtos.Cuenta;
 import dtos.Servidor;
+import fachada.ConsultarFachada;
 import fachada.MailFachada;
 
 /**
@@ -31,11 +31,11 @@ public class MailSender2 {
         // Enviar correo con la nueva configuración
         MailFachada otroMailFacade = new MailFachada();
         
+        ConsultarFachada consultarFacade = new ConsultarFachada();
+        System.out.println("");
+        System.out.println(consultarFacade.consultarConfiguracion());
         
-        mailFacade.enviarCorreo(new Correo("destinatario@example.com", "Asunto", "Cuerpo del mensaje"));
-        
-        
-        otroMailFacade.enviarCorreo(new Correo("otro@example.com", "Nuevo Asunto", "Cuerpo del nuevo mensaje"));
+//        otroMailFacade.enviarCorreo(new Correo("otro@example.com", "Nuevo Asunto", "Cuerpo del nuevo mensaje"));
     }
 }
 

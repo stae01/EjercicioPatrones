@@ -1,2 +1,5 @@
 smtp.otroservicio.com
-300
+465
+otroUsuario@example.com
+nuevaPassword
+OtroServicio

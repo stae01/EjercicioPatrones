@@ -28,10 +28,14 @@ public class MailConfiguracionManager {
     public static void actualizarConfiguracion(MailConfiguracion nuevaConfiguracion) {
         
         LectorArchivoConfiguracion archivoConfiguracion = new LectorArchivoConfiguracion();
-        archivoConfiguracion.actualizarConfiguracion(nuevaConfiguracion.getServidor().getTipo(), nuevaConfiguracion.getServidor().getPuerto());
+        archivoConfiguracion.actualizarConfiguracion(
+                nuevaConfiguracion.getServidor().getTipo(),
+                nuevaConfiguracion.getServidor().getPuerto(),
+                nuevaConfiguracion.getCuenta().getDireccion(),
+                nuevaConfiguracion.getCuenta().getContrasena(),
+                nuevaConfiguracion.getProtocolo()
+        );
         
         configuracionActual = nuevaConfiguracion;
-        
-        System.out.println("Configuración actualizada: " + nuevaConfiguracion.getServidor().getTipo());
     }
 }

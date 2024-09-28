@@ -26,4 +26,5 @@ public class MailFachada {
     public void enviarCorreo(Correo correo) {
         servicioCorreo.enviarCorreo(correo, MailConfiguracionManager.getConfiguracion());
     }
+    
 }
