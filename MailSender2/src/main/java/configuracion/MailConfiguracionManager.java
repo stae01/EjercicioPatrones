@@ -25,8 +25,13 @@ public class MailConfiguracionManager {
     }
 
     // Método para actualizar la configuración
-    public static void setConfiguracion(MailConfiguracion nuevaConfiguracion) {
+    public static void actualizarConfiguracion(MailConfiguracion nuevaConfiguracion) {
+        
+        LectorArchivoConfiguracion archivoConfiguracion = new LectorArchivoConfiguracion();
+        archivoConfiguracion.actualizarConfiguracion(nuevaConfiguracion.getServidor().getTipo(), nuevaConfiguracion.getServidor().getPuerto());
+        
         configuracionActual = nuevaConfiguracion;
+        
         System.out.println("Configuración actualizada: " + nuevaConfiguracion.getServidor().getTipo());
     }
 }

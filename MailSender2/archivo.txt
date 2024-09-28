@@ -1,0 +1,2 @@
+smtp.otroservicio.com
+300
